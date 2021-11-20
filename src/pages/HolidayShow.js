@@ -1,31 +1,30 @@
 // Show.js
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
-function Show(props) {
+function HolidayShow(props) {
+    console.log("test")
+    console.log(props);
     const id = props.match.params.id;
-    const items = props.registryItem;
-    const registryItem = items.find((singleItem) => {
-        return singleItem._id === id //gives a boolean
-    });
-    const [editRegistryItem, setEditRegistryItem] = useState(registryItem);
+    const items = props.registryHolidayItem;
+    const registryHolidayItem = items.find(p => p._id === id);
+    const [editHolidayRegistryItem, setEditHolidayRegistryItem] = useState(registryHolidayItem);
 
     const handleChange = (event) => {
-        setEditRegistryItem({
-        ...editRegistryItem, [event.target.name]: event.target.value
+        setEditHolidayRegistryItem({
+        ...editHolidayRegistryItem, [event.target.name]: event.target.value
         });
     };
 
     //handle submit function
     const handleSubmit = (event) => {
         event.preventDefault() //prevents page refresh
-        props.updateRegistryItem(editRegistryItem, registryItem._id);
+        props.updateHolidayRegistryItem(editHolidayRegistryItem, registryHolidayItem._id);
         props.history.push('/'); //back to index
     }
 
     //remove a registry item
-    const removeRegistryItem = () => {
-        props.deleteRegistryItem(registryItem._id);
+    const removeHolidayRegistryItem = () => {
+        props.deleteHolidayRegistryItem(registryHolidayItem._id);
         props.history.push('/'); //back to index
     }
 
@@ -38,7 +37,7 @@ function Show(props) {
             <input
                 className="input-style"
                 type="text"
-                value={editRegistryItem.title}
+                value={editHolidayRegistryItem.title}
                 name="title"
                 placeholder="title"
                 onChange={handleChange}
@@ -46,7 +45,7 @@ function Show(props) {
             <input
                 className="input-style"
                 type="text"
-                value={editRegistryItem.url}
+                value={editHolidayRegistryItem.url}
                 name="url"
                 placeholder="url"
                 onChange={handleChange}
@@ -59,13 +58,13 @@ function Show(props) {
             />
         </form>
         <div className="show-background">
-        <h1 className="show-headers">{registryItem.title}</h1>
-        <h2 className="show-headers"><a href={registryItem.url} target="_blank" rel="noreferrer">{registryItem.url}</a></h2>
+        <h1 className="show-headers">{registryHolidayItem.itemName}</h1>
+        <h2 className="show-headers">{registryHolidayItem.url}</h2>
         </div>
-        <button onClick={removeRegistryItem}id="delete" className="button-style">Delete</button>
+        <button onClick={removeHolidayRegistryItem}id="delete" className="button-style">Delete</button>
         
     </section>
 } 
     
-export default Show
+export default HolidayShow
 

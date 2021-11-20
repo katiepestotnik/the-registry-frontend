@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import Index from '../pages/Index';
+import Index from '../pages/IndexHoliday';
 import Show from '../pages/HolidayShow';
 //comment
 const Main = (props) => {
     //STATE to hold API data
-    const [registryItem, setRegistryItem] = useState(null);
-    const URL = "https://the-registry-app-backend.herokuapp.com/the-registry/";
-    const getRegistryItem = async () => {
+    const [registryHolidayItem, setHolidayRegistryItem] = useState(null);
+    const URL = "http://localhost:4000/hol-registry/";
+    const getHolidayRegistryItem = async () => {
         const response = await fetch(URL);
         const data = await response.json();
-        setRegistryItem(data);
+        setHolidayRegistryItem(data);
     };
     //Create with POST RegistryItem
-    const createRegistryItem = async (mark) => {
+    const createHolidayRegistryItem = async (mark) => {
         await fetch(URL, {
             method: "post",
             headers: {
@@ -21,10 +21,10 @@ const Main = (props) => {
             },
             body: JSON.stringify(mark)
         });
-        getRegistryItem();
+        getHolidayRegistryItem();
     };
     //Update with PUT Registry Item
-    const updateRegistryItem = async (mark, id) => {
+    const updateHolidayRegistryItem = async (mark, id) => {
         await fetch(URL + id, {
             method: "put",
             headers: {
@@ -32,31 +32,32 @@ const Main = (props) => {
             },
             body: JSON.stringify(mark)
         });
-        getRegistryItem();
+        getHolidayRegistryItem();
     };
     //Delete with DELETE RegistryItem
-    const deleteRegistryItem = async (id) => {
+    const deleteHolidayRegistryItem = async (id) => {
         await fetch(URL + id, {
             method: "delete"
         });
-        getRegistryItem();
+        getHolidayRegistryItem();
     };
-    useEffect(() => getRegistryItem(), []);
+
+    useEffect(() => getHolidayRegistryItem(), []);
     return (
         <main>
             <Switch>
                 <Route exact path="/">
-                    <Index registryItem={registryItem}
-                        createRegistryItem={createRegistryItem} />
+                    <Index registryHolidayItem={registryHolidayItem}
+                        createHolidayRegistryItem={createHolidayRegistryItem} />
                 </Route>
                 <Route
-                    path="/registry/:id"
+                    path="/hol-registry/:id"
                     render={(rp) => (
                         <Show
                             {...rp}
-                            registryItem={registryItem}
-                            updateRegistryItem={updateRegistryItem}
-                            deleteRegistryItem={deleteRegistryItem}
+                            registryHolidayItem={registryHolidayItem}
+                            updateHolidayRegistryItem={updateHolidayRegistryItem}
+                            deleteHolidayRegistryItem={deleteHolidayRegistryItem}
                         />
                     )}
                 />
