@@ -1,67 +1,57 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Index from '../pages/IndexHoliday';
+import { Route } from 'react-router-dom';
 import Show from '../pages/HolidayShow';
-//comment
+
 const Main = (props) => {
     //STATE to hold API data
-    const [registryHolidayItem, setHolidayRegistryItem] = useState(null);
+    const [HolidayItem, setHolidayItem] = useState(null);
     const URL = "http://localhost:4000/hol-registry/";
-    const getHolidayRegistryItem = async () => {
+    const getHolidayItem = async () => {
         const response = await fetch(URL);
         const data = await response.json();
-        setHolidayRegistryItem(data);
+        setHolidayItem(data);
     };
     //Create with POST RegistryItem
-    const createHolidayRegistryItem = async (mark) => {
+    const createHolidayItem = async (item) => {
         await fetch(URL, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(mark)
+            body: JSON.stringify(item)
         });
-        getHolidayRegistryItem();
+        getHolidayItem();
     };
     //Update with PUT Registry Item
-    const updateHolidayRegistryItem = async (mark, id) => {
+    const updateHolidayItem = async (item, id) => {
         await fetch(URL + id, {
             method: "put",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(mark)
+            body: JSON.stringify(item)
         });
-        getHolidayRegistryItem();
+        getHolidayItem();
     };
     //Delete with DELETE RegistryItem
-    const deleteHolidayRegistryItem = async (id) => {
+    const deleteHolidayItem = async id => {
         await fetch(URL + id, {
-            method: "delete"
+            method: "delete",
         });
-        getHolidayRegistryItem();
+        getHolidayItem();
     };
 
-    useEffect(() => getHolidayRegistryItem(), []);
+    useEffect(() => getHolidayItem(), []);
     return (
         <main>
-            <Switch>
-                <Route exact path="/">
-                    <Index registryHolidayItem={registryHolidayItem}
-                        createHolidayRegistryItem={createHolidayRegistryItem} />
-                </Route>
-                <Route
-                    path="/hol-registry/:id"
-                    render={(rp) => (
-                        <Show
-                            {...rp}
-                            registryHolidayItem={registryHolidayItem}
-                            updateHolidayRegistryItem={updateHolidayRegistryItem}
-                            deleteHolidayRegistryItem={deleteHolidayRegistryItem}
+                <Route path="/">
+                    <Show
+                        HolidayItem={HolidayItem}
+                        createHolidayItem={createHolidayItem} 
+                        updateHolidayItem={updateHolidayItem}
+                        deleteHolidayItem={deleteHolidayItem}
                         />
-                    )}
-                />
-            </Switch>
+                </Route>
         </main>
     );
 };

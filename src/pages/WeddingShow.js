@@ -65,5 +65,5 @@ function WeddingShow(props) {
     </section>
 } 
     
-export default HolidayShow
+export default WeddingShow
 

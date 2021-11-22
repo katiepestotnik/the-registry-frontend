@@ -2,68 +2,115 @@
 import { useState } from 'react';
 
 function HolidayShow(props) {
-    console.log("test")
-    console.log(props);
-    const id = props.match.params.id;
-    const items = props.registryHolidayItem;
-    const registryHolidayItem = items.find(p => p._id === id);
-    const [editHolidayRegistryItem, setEditHolidayRegistryItem] = useState(registryHolidayItem);
+    const holItem = props.HolidayItem
+    const [newForm, setNewForm] = useState({
+        itemName: "",
+        itemDescription: "",
+        itemUrl: "",
+  });
+  const [editForm, setEditForm] = useState(holItem)
 
-    const handleChange = (event) => {
-        setEditHolidayRegistryItem({
-        ...editHolidayRegistryItem, [event.target.name]: event.target.value
-        });
-    };
+  //Forms
 
-    //handle submit function
-    const handleSubmit = (event) => {
-        event.preventDefault() //prevents page refresh
-        props.updateHolidayRegistryItem(editHolidayRegistryItem, registryHolidayItem._id);
-        props.history.push('/'); //back to index
-    }
+  const createRegistry = (event) => {
+      setNewForm({ ...newForm, [event.target.name]: event.target.value });
+  };
+  const handleChange = event => {
+    setEditForm({ ...editForm, [event.target.name]: event.target.value })
+  };
 
-    //remove a registry item
-    const removeHolidayRegistryItem = () => {
-        props.deleteHolidayRegistryItem(registryHolidayItem._id);
-        props.history.push('/'); //back to index
-    }
+//submit functions
+  const createSubmit = (event) => {
+    event.preventDefault();
+    props.createHolidayItem(newForm);
+    setNewForm({
+        itemName: "",
+        itemDescription: "",
+        itemUrl: "",
+    });
+  };
+  const handleSubmit = event => {
+    event.preventDefault()
+    props.updateHolidayItem(editForm, holItem._id)
+    // props.history.push("/")
+  }
 
-    //goals - create div that can be targeted for styling, 
-    //with displayed registry item info, i.e. a few static headers
-    //add a button option for removing registry item
-    //on submit, want to edit values of title and url to update registry item
-    return <section className='full-page-style'>
-        <form onSubmit={handleSubmit}>
-            <input
-                className="input-style"
-                type="text"
-                value={editHolidayRegistryItem.title}
-                name="title"
-                placeholder="title"
-                onChange={handleChange}
-            />
-            <input
-                className="input-style"
-                type="text"
-                value={editHolidayRegistryItem.url}
-                name="url"
-                placeholder="url"
-                onChange={handleChange}
-            />
-            <input
-                className="button-style"
-                type="submit"
-                value="Update"
-                name="submit"
-            />
-        </form>
-        <div className="show-background">
-        <h1 className="show-headers">{registryHolidayItem.itemName}</h1>
-        <h2 className="show-headers">{registryHolidayItem.url}</h2>
-        </div>
-        <button onClick={removeHolidayRegistryItem}id="delete" className="button-style">Delete</button>
-        
+  const loaded = () => {
+      return props.HolidayItem.map((item) => (
+          <div key={item._id}>
+              <ul>
+                  <li>{item.itemName}</li>
+                  <li>{item.itemDescription}</li>
+                  <li>{item.itemUrl}</li>
+                </ul>
+    {/* <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={editForm.itemName}
+          name="name"
+          placeholder="name"
+          onChange={handleChange}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={editForm.itemDescription}
+          name="image"
+          placeholder="image URL"
+          onChange={handleChange}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={editForm.itemUrl}
+          name="countryOfOrigin"
+          placeholder="Country of Origin"
+          onChange={handleChange}
+          className="form-input"
+        /> <br />
+        <input type="submit" value="Change Cheese deets!" />
+      </form> */}
+
+          </div>
+      ))
+  }
+  const loading = () => {
+    return <h1>Loading...</h1>;
+  };
+  return (
+    <section>
+      <form onSubmit={createSubmit}>
+        <input
+          type="text"
+          value={newForm.itemName}
+          name="name"
+          placeholder="Enter Product"
+          onChange={createRegistry}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={newForm.itemDescription}
+          name="description"
+          placeholder="Edit Description"
+          onChange={createRegistry}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={newForm.itemUrl}
+          name="itemUrl"
+          placeholder="Save Url"
+          onChange={createRegistry}
+          className="form-input"
+        />
+        <input type="submit" value="Add to your registry" />
+      </form>
+      {props.HolidayItem ? loaded() : loading()}
     </section>
+  );
+
+
 } 
     
 export default HolidayShow
