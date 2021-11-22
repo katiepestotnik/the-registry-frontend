@@ -7,19 +7,14 @@ function HolidayShow(props) {
         itemDescription: "",
         itemUrl: "",
   });
-//   const [editForm, setEditForm] = useState(holItem)
-
   //Forms
 
-  const createRegistry = (event) => {
+  const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
-//   const handleChange = event => {
-//     setEditForm({ ...editForm, [event.target.name]: event.target.value })
-//   };
 
 //submit functions
-  const createSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     props.createHolidayItem(newForm);
     setNewForm({
@@ -28,11 +23,6 @@ function HolidayShow(props) {
         itemUrl: "",
     });
   };
-//   const handleSubmit = event => {
-//     event.preventDefault()
-//     props.updateHolidayItem(editForm, holItem._id)
-//     // props.history.push("/")
-//   }
 
   const loaded = () => {
       return props.HolidayItem.map((item) => (
@@ -53,29 +43,29 @@ function HolidayShow(props) {
   };
   return (
     <section>
-      <form onSubmit={createSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={newForm.itemName}
-          name="name"
+          name="itemName"
           placeholder="Enter Product"
-          onChange={createRegistry}
+          onChange={handleChange}
           className="form-input"
         />
         <input
           type="text"
           value={newForm.itemDescription}
-          name="description"
-          placeholder="Edit Description"
-          onChange={createRegistry}
+          name="itemDescription"
+          placeholder="Your Description"
+          onChange={handleChange}
           className="form-input"
         />
         <input
           type="text"
           value={newForm.itemUrl}
           name="itemUrl"
-          placeholder="Save Url"
-          onChange={createRegistry}
+          placeholder="URL"
+          onChange={handleChange}
           className="form-input"
         />
         <input type="submit" value="Add to your registry" />
