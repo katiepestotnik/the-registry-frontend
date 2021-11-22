@@ -2,22 +2,21 @@
 import { useState } from 'react';
 
 function HolidayShow(props) {
-    const holItem = props.HolidayItem
     const [newForm, setNewForm] = useState({
         itemName: "",
         itemDescription: "",
         itemUrl: "",
   });
-  const [editForm, setEditForm] = useState(holItem)
+//   const [editForm, setEditForm] = useState(holItem)
 
   //Forms
 
   const createRegistry = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
-  const handleChange = event => {
-    setEditForm({ ...editForm, [event.target.name]: event.target.value })
-  };
+//   const handleChange = event => {
+//     setEditForm({ ...editForm, [event.target.name]: event.target.value })
+//   };
 
 //submit functions
   const createSubmit = (event) => {
@@ -29,11 +28,11 @@ function HolidayShow(props) {
         itemUrl: "",
     });
   };
-  const handleSubmit = event => {
-    event.preventDefault()
-    props.updateHolidayItem(editForm, holItem._id)
-    // props.history.push("/")
-  }
+//   const handleSubmit = event => {
+//     event.preventDefault()
+//     props.updateHolidayItem(editForm, holItem._id)
+//     // props.history.push("/")
+//   }
 
   const loaded = () => {
       return props.HolidayItem.map((item) => (
@@ -43,34 +42,9 @@ function HolidayShow(props) {
                   <li>{item.itemDescription}</li>
                   <li>{item.itemUrl}</li>
                 </ul>
-    {/* <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={editForm.itemName}
-          name="name"
-          placeholder="name"
-          onChange={handleChange}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={editForm.itemDescription}
-          name="image"
-          placeholder="image URL"
-          onChange={handleChange}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={editForm.itemUrl}
-          name="countryOfOrigin"
-          placeholder="Country of Origin"
-          onChange={handleChange}
-          className="form-input"
-        /> <br />
-        <input type="submit" value="Change Cheese deets!" />
-      </form> */}
-
+      <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
+        DELETE
+      </button>
           </div>
       ))
   }
