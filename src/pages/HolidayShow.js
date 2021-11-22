@@ -7,11 +7,18 @@ function HolidayShow(props) {
         itemDescription: "",
         itemUrl: "",
   });
+  const [editForm, setEditForm] = useState(null)
+  const updateName = useState(null)
+  const updateDescription = useState(null)
+  const updateUrl = useState(null)
   //Forms
 
   const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
+  const updateChange = event => {
+    setEditForm({ ...editForm, [event.target.name]: event.target.value })
+  }
 
 //submit functions
   const handleSubmit = (event) => {
@@ -32,8 +39,16 @@ function HolidayShow(props) {
                   <li>{item.itemDescription}</li>
                   <li>{item.itemUrl}</li>
                 </ul>
+
       <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
         DELETE
+      </button>
+      <button id="update" onClick={() => {
+          updateName.current.value = item.itemName
+          updateDescription.current.value = item.itemDescription
+          updateUrl.current.value = item.itemUrl
+          }}>
+        EDIT
       </button>
           </div>
       ))
@@ -69,6 +84,36 @@ function HolidayShow(props) {
           className="form-input"
         />
         <input type="submit" value="Add to your registry" />
+      </form>
+      <form onSubmit={() => props.updateHolidayItem(editForm)}>
+        <input
+          type="text"
+          value={newForm.itemName}
+          name="itemName"
+          placeholder="Enter Product"
+          onChange={updateChange}
+          ref={updateName}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={newForm.itemDescription}
+          name="itemDescription"
+          placeholder="Your Description"
+          onChange={updateChange}
+          ref={updateDescription}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={newForm.itemUrl}
+          name="itemUrl"
+          placeholder="URL"
+          onChange={updateChange}
+          ref={updateUrl}
+          className="form-input"
+        />
+        <input type="submit" value="Change your registry" />
       </form>
       {props.HolidayItem ? loaded() : loading()}
     </section>
