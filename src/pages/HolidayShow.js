@@ -8,17 +8,15 @@ function HolidayShow(props) {
         itemUrl: "",
   });
   const [editForm, setEditForm] = useState(null)
-  const updateName = useState(null)
-  const updateDescription = useState(null)
-  const updateUrl = useState(null)
+//   const updateItemID = useState(null)
+//   const updateName = useState(null)
+//   const updateDescription = useState(null)
+//   const updateUrl = useState(null)
   //Forms
 
   const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
-  const updateChange = event => {
-    setEditForm({ ...editForm, [event.target.name]: event.target.value })
-  }
 
 //submit functions
   const handleSubmit = (event) => {
@@ -32,6 +30,10 @@ function HolidayShow(props) {
   };
 
   const loaded = () => {
+    const updateChange = (event) => {
+        setEditForm({ ...editForm, [event.target.name]: event.target.value })
+      }
+    
       return props.HolidayItem.map((item) => (
           <div key={item._id}>
               <ul>
@@ -43,13 +45,41 @@ function HolidayShow(props) {
       <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
         DELETE
       </button>
-      <button id="update" onClick={() => {
+      <form onSubmit={() => props.deleteHolidayItem(editForm, item._id)}>
+        <input
+          type="text"
+          value={editForm.itemName}
+          name="itemName"
+          placeholder="Enter Product"
+          onChange={updateChange}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={editForm.itemDescription}
+          name="itemDescription"
+          placeholder="Your Description"
+          onChange={updateChange}
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={editForm.itemUrl}
+          name="itemUrl"
+          placeholder="URL"
+          onChange={updateChange}
+          className="form-input"
+        />
+        <input type="submit" value="Change your registry" />
+      </form>
+      {/* <button id="update" onClick={() => {
+          updateItemID.currentvalue = item._id
           updateName.current.value = item.itemName
           updateDescription.current.value = item.itemDescription
           updateUrl.current.value = item.itemUrl
           }}>
         EDIT
-      </button>
+      </button> */}
           </div>
       ))
   }
@@ -84,36 +114,6 @@ function HolidayShow(props) {
           className="form-input"
         />
         <input type="submit" value="Add to your registry" />
-      </form>
-      <form onSubmit={() => props.updateHolidayItem(editForm)}>
-        <input
-          type="text"
-          value={newForm.itemName}
-          name="itemName"
-          placeholder="Enter Product"
-          onChange={updateChange}
-          ref={updateName}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={newForm.itemDescription}
-          name="itemDescription"
-          placeholder="Your Description"
-          onChange={updateChange}
-          ref={updateDescription}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={newForm.itemUrl}
-          name="itemUrl"
-          placeholder="URL"
-          onChange={updateChange}
-          ref={updateUrl}
-          className="form-input"
-        />
-        <input type="submit" value="Change your registry" />
       </form>
       {props.HolidayItem ? loaded() : loading()}
     </section>
