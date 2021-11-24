@@ -9,7 +9,6 @@ const Main = (props) => {
     //Global State
     const [state, setState] = useContext(Context);
     const { url, token } = state;
-    console.log("this is state", state)
     //STATE to hold API data
     const [WeddingItem, setWeddingItem] = useState(null);
     // const URL = "http://localhost:4000/wed-registry/";
@@ -24,7 +23,6 @@ const Main = (props) => {
         });
         const data = await response.json();
         setWeddingItem(data);
-        console.log(data)
     };
     //Create with POST RegistryItem
     const createWeddingItem = async (item) => {
@@ -39,7 +37,6 @@ const Main = (props) => {
         }).then(response => response.json()).then(data => {
             getWeddingItem();
         });
-
     };
     //Update with PUT Registry Item
     const updateWeddingItem = async (item, id) => {
