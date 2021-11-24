@@ -1,5 +1,4 @@
 import './App.css';
-//duplicates
 import Header from "./components/Header";
 import HolidayMain from "./components/HolidayMain";
 import WeddingMain from "./components/WeddingMain";
@@ -10,6 +9,8 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Registry from "./pages/Registry";
+//import Main to test routes
+import Main from "./components/Main"
 
 function App() {
   return (
@@ -43,8 +44,8 @@ function App() {
             <HolidayMain {...rp} />
           }}>
         </Route>
-      <Footer/>
       </Switch>
+      <Footer/>
     </Global>
   );
 }
