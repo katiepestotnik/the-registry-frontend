@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Context } from "../Global";
 import { useContext } from 'react';
-import Header from "../components/Header";
+
 
 const Login = (props) => {
     //global state
@@ -36,18 +36,15 @@ const Login = (props) => {
 
         });
     }
-    return (<div className="full-page-style">
-        <Header/>
+    return (<div>
         <form onSubmit={handleSubmit}>
             <input
                 type="text" name="username" value={form.username}
-                onChange={handleChange}
-                className="input-style"></input>
+                onChange={handleChange}></input>
             <input
                 type="password" name="password" value={form.password}
-                onChange={handleChange}
-                className="input-style"></input>
-            <input className="button-style"type="submit" value="LOGIN"></input>
+                onChange={handleChange}></input>
+            <input type="submit" value="LOGIN"></input>
         </form>
     </div>)
 };

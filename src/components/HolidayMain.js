@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HolidayShow from '../pages/HolidayShow';
-import HolidayEdit from "../pages/HolidayEdit"
+import HolidayEdit from "../pages/HolidayEdit";
+
 
 const Main = (props) => {
     //STATE to hold API data

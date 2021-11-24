@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Context } from "../Global";
 import { useContext } from 'react';
-import Header from "../components/Header";
+
 const Signup = (props) => {
     //global state
     const [state, setState] = useContext(Context);
@@ -36,7 +36,6 @@ const Signup = (props) => {
         });
     }
     return (<div>
-        <Header/>
         <form onSubmit={handleSubmit}>
             <input
                 type="text" name="username" value={form.username}
@@ -45,7 +44,6 @@ const Signup = (props) => {
                 type="password" name="password" value={form.password}
                 onChange={handleChange}></input>
             <input
-                className="button-style"
                 type="submit" value="REGISTER"></input>
         </form>
     </div>)

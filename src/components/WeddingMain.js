@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import WeddingShow from '../pages/WeddingShow';
-import WeddingEdit from "../pages/WeddingEdit"
+import WeddingEdit from "../pages/WeddingEdit";
+
 
 const Main = (props) => {
     //STATE to hold API data
