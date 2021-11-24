@@ -15,8 +15,8 @@ const Home = (props) => {
     </Link>
     return (
         <div>
-        <Link to="/signup"><h2>REGISTER</h2></Link>
         <Link to="/login"><h2>LOGIN</h2></Link>
+        <Link to="/signup"><h2>REGISTER</h2></Link>
         </div>
     );
 };
