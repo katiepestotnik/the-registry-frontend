@@ -19,7 +19,7 @@ function HolidayEdit(props) {
           <input
             type="text"
             value={editForm.name}
-            name="name"
+            name="itemName"
             placeholder={holidayItem.itemName}
             onChange={handleChange}
             className="form-input"

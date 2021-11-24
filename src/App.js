@@ -31,12 +31,12 @@ function App() {
           render={(rp)=><Registry {...rp}/>}>
         </Route>
         <Route
-          path="/wed-registry">
-          <WeddingMain/>
+          path="/wed-registry"
+          render={(rp)=><WeddingMain {...rp}/>}>
         </Route>
         <Route
-          path="/hol-registry">
-          <HolidayMain/>
+          path="/hol-registry"
+          render={(rp)=><HolidayMain {...rp}/>}>
         </Route>
       </Switch>
       <Footer/>
