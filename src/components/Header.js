@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Context } from "../Global";
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 const Header = (props) => {
     const [state, setState] = useContext(Context);
     const logout = <Link to="/">

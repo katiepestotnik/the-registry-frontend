@@ -49,5 +49,4 @@ function App() {
     </Global>
   );
 }
-
 export default App;
