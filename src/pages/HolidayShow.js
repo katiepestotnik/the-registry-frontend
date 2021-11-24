@@ -45,41 +45,6 @@ function HolidayShow(props) {
       <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
         DELETE
       </button>
-      <form onSubmit={() => props.deleteHolidayItem(editForm, item._id)}>
-        <input
-          type="text"
-          value={editForm.itemName}
-          name="itemName"
-          placeholder="Enter Product"
-          onChange={updateChange}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={editForm.itemDescription}
-          name="itemDescription"
-          placeholder="Your Description"
-          onChange={updateChange}
-          className="form-input"
-        />
-        <input
-          type="text"
-          value={editForm.itemUrl}
-          name="itemUrl"
-          placeholder="URL"
-          onChange={updateChange}
-          className="form-input"
-        />
-        <input type="submit" value="Change your registry" />
-      </form>
-      {/* <button id="update" onClick={() => {
-          updateItemID.currentvalue = item._id
-          updateName.current.value = item.itemName
-          updateDescription.current.value = item.itemDescription
-          updateUrl.current.value = item.itemUrl
-          }}>
-        EDIT
-      </button> */}
           </div>
       ))
   }
