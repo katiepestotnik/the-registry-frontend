@@ -20,7 +20,7 @@ function WeddingEdit(props) {
         <input
           type="text"
           value={editForm.name}
-          name="name"
+          name="itemName"
           placeholder={weddingItem.itemName}
           onChange={handleChange}
           className="form-input"
