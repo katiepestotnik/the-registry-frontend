@@ -1,6 +1,7 @@
 // Show.js
 import { useState } from 'react';
 import {Link} from "react-router-dom"
+import Modal from "./HolidayModal"
 
 function HolidayShow(props) {
     const [newForm, setNewForm] = useState({
@@ -8,6 +9,7 @@ function HolidayShow(props) {
         itemDescription: "",
         itemUrl: "",
   });
+  const [isOpen, setIsOpen] = useState(false)
   //Forms
   const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
@@ -27,15 +29,23 @@ function HolidayShow(props) {
   const loaded = () => {
       return props.HolidayItem.map((item) => (
           <div key={item._id}>
-              <ul>
+              <p>{item.itemName}</p>
+              <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
+        DELETE
+      </button>
+      <>
+      <div>
+        <button onClick={() => setIsOpen(true)}>View Details</button>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <ul>
                   <li>{item.itemName}</li>
                   <li>{item.itemDescription}</li>
                   <li>{item.itemUrl}</li>
                 </ul>
         <Link to={`/hol-registry/${item._id}`}><button>EDIT</button></Link>
-      <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
-        DELETE
-      </button>
+        </Modal>
+      </div>
+    </>
           </div>
       ))
   }
