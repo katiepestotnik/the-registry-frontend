@@ -1,10 +1,5 @@
-import { Link } from "react-router-dom";
+
 const Hyperlink = (props) => {
-    return(
-    <div>
-            <Link to={"/wed-registry"}><h2>Wedding Registry</h2></Link>
-            <Link to={"/hol-registry"}><h2>Holiday Registry</h2></Link>
-    </div>
-    )
+    return <div><a href="https://the-registry.herokuapp.com/hol-registry">Holiday Registry</a> <a href="https://the-registry.herokuapp.com/wed-registry">Wedding Registry</a> </div>
 };
 export default Hyperlink;
