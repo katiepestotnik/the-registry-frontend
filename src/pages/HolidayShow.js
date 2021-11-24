@@ -1,5 +1,6 @@
 // Show.js
 import { useState } from 'react';
+import {Link} from "react-router-dom"
 
 function HolidayShow(props) {
     const [newForm, setNewForm] = useState({
@@ -7,13 +8,7 @@ function HolidayShow(props) {
         itemDescription: "",
         itemUrl: "",
   });
-  const [editForm, setEditForm] = useState(null)
-//   const updateItemID = useState(null)
-//   const updateName = useState(null)
-//   const updateDescription = useState(null)
-//   const updateUrl = useState(null)
   //Forms
-
   const handleChange = (event) => {
       setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
@@ -30,10 +25,6 @@ function HolidayShow(props) {
   };
 
   const loaded = () => {
-    const updateChange = (event) => {
-        setEditForm({ ...editForm, [event.target.name]: event.target.value })
-      }
-    
       return props.HolidayItem.map((item) => (
           <div key={item._id}>
               <ul>
@@ -41,7 +32,7 @@ function HolidayShow(props) {
                   <li>{item.itemDescription}</li>
                   <li>{item.itemUrl}</li>
                 </ul>
-
+        <Link to={`/hol-registry/${item._id}`}><button>EDIT</button></Link>
       <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
         DELETE
       </button>

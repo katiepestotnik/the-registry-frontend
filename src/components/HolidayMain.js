@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Show from '../pages/HolidayShow';
+import Edit from "../pages/HolidayEdit"
 
 const Main = (props) => {
     //STATE to hold API data
@@ -44,14 +45,25 @@ const Main = (props) => {
     useEffect(() => getHolidayItem(), []);
     return (
         <main>
-                <Route path="/">
+            <Switch>
+                <Route exact path="/">
                     <Show
                         HolidayItem={HolidayItem}
                         createHolidayItem={createHolidayItem} 
-                        updateHolidayItem={updateHolidayItem}
                         deleteHolidayItem={deleteHolidayItem}
                         />
                 </Route>
+                <Route 
+          path="/hol-registry/:id"
+          render={(rp) => (
+            <Edit 
+              {...rp}
+              HolidayItem={HolidayItem}
+              updateHolidayItem={updateHolidayItem}
+            />
+          )}
+        />
+            </Switch>
         </main>
     );
 };
