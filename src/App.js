@@ -9,8 +9,6 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Registry from "./pages/Registry";
-//import Main to test routes
-import Main from "./components/Main"
 
 function App() {
   return (
@@ -33,16 +31,12 @@ function App() {
           render={(rp)=><Registry {...rp}/>}>
         </Route>
         <Route
-          path="/wed-registry"
-          render={(rp) => {
-            <WeddingMain {...rp} />
-          }}>
+          path="/wed-registry">
+          <WeddingMain/>
         </Route>
         <Route
-          path="/hol-registry"
-          render={(rp) => {
-            <HolidayMain {...rp} />
-          }}>
+          path="/hol-registry">
+          <HolidayMain/>
         </Route>
       </Switch>
       <Footer/>
