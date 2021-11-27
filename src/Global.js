@@ -3,7 +3,7 @@
 import { useState, createContext } from 'react';
 
 const initalState = {
-    url: "https://the-registry.herokuapp.com",
+    url: "http://localhost:4000",
     token: null
 };
 

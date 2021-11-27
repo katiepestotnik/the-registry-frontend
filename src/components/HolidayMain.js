@@ -62,7 +62,13 @@ const Main = (props) => {
             getHolidayItem();
         });
     };
-    useEffect(() => getHolidayItem(), []);
+    useEffect(() => {
+        if (state.token === null) {
+            alert('Login not verified: Register or Reenter Login')
+            props.history.push('/')
+        }
+        getHolidayItem()
+    }, []);
     return (
         <main>
             <Switch>
