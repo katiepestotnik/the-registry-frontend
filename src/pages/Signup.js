@@ -14,7 +14,6 @@ const Signup = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(form.username, form.password)
         const { username, password } = form;
         fetch(`${state.url}/auth/signup`, {
             method: "POST",
@@ -23,11 +22,9 @@ const Signup = (props) => {
             },
             body: JSON.stringify({ username, password })
         }).then(response => response.json()).then(data => {
-            console.log("token is:", data.token);
             //store token for refresh
             window.localStorage.setItem("token", JSON.stringify(data));
             setState({ ...state, token: data.token });
-            console.log('this is state:' , state)
             setForm({
                 username: '',
                 password: ''
