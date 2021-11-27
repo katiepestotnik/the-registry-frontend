@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
+import { Context } from "../Global";
+import { useContext } from 'react';
 const Hyperlink = (props) => {
+    const [state, setState] = useContext(Context)
+    console.log(state)
     return(
     <div>
             <Link to={"/wed-registry"}><h2>Wedding Registry</h2></Link>

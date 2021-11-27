@@ -23,11 +23,9 @@ const Login = (props) => {
             },
             body: JSON.stringify({ username, password })
         }).then(response => response.json()).then(data => {
-            console.log("token is:", data.token);
             //store token for refresh
             window.localStorage.setItem("token", JSON.stringify(data.token));
             setState({ ...state, token: data.token });
-            console.log(state)
             setForm({
                 username: '',
                 password: ''
