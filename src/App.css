@@ -58,7 +58,7 @@ h2.nav-decoration:hover {
   text-decoration: underline;
 }
 
-div.home-content {
+div.overlap-content {
   margin: 1% 25% 0 25%;
   border: 5px solid black;
   padding-left: 2%;
@@ -73,5 +73,22 @@ h3 {
 }
 p.home-paragraph {
   text-align: justify;
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
+div.spacing-form {
+  margin-top: 5%;
+}
+div.mb-3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+input.btn {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+input.btn-primary {
+  color: #fff;
+  background-color: gray; 
+  border-color: gray;
+  margin-bottom: 10px;
+};
