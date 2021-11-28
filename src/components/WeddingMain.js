@@ -64,6 +64,10 @@ const Main = (props) => {
 
     };
     useEffect(() => {
+        if (state.token === null) {
+            alert('Login not verified: Register or Reenter Login')
+            props.history.push('/')
+        }
         getWeddingItem();
     }, [])
     return (
