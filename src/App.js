@@ -13,7 +13,7 @@ import Registry from "./pages/Registry";
 function App() {
   return (
     <Global>
-      <Header/>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Home/>
@@ -39,7 +39,6 @@ function App() {
           render={(rp)=><HolidayMain {...rp}/>}>
         </Route>
       </Switch>
-      <Footer/>
     </Global>
   );
 }

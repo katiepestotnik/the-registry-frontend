@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+/* font: font-family: 'Great Vibes', cursive; */
+h1.header-font {
+  font-family: 'Great Vibes', cursive;
+  font-size: 67px;
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 15px;
+}
+div.header-bg {
+  background-image: url('https://myethicalchoice.com/wp-content/uploads/2021/03/ethical-gift-idea-top.jpeg');
+  height: 250px;
+  background-position: center -80px; 
+}
