@@ -12,9 +12,9 @@ const Header = (props) => {
     </button>
 </Link>
     return (
-        <div>
+        <div className="header-bg">
         <nav>
-                <h1>The Registry</h1>
+                <h1 className="header-font">The Registry</h1>
                 <Link to="/">{state.token?logout:null}</Link>
             </nav>
         </div>

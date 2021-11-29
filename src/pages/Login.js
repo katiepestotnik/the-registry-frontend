@@ -34,16 +34,24 @@ const Login = (props) => {
 
         });
     }
-    return (<div>
+    return (    <div className="spacing-form">
+    <div className="overlap-content">
+        <h3>&nbsp;   Login to your Account...</h3>
         <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+            <label for="CreateUsername" className="form-label">Username</label>
             <input
-                type="text" name="username" value={form.username}
-                onChange={handleChange}></input>
+                type="text" name="username" value={form.username} className="form-control"
+                onChange={handleChange}></input></div>
+            <div className="mb-3">
+            <label for="CreatePassword" className="form-label">Password</label>
             <input
-                type="password" name="password" value={form.password}
-                onChange={handleChange}></input>
-            <input type="submit" value="LOGIN"></input>
+                type="password" name="password" value={form.password} className="form-control"
+                onChange={handleChange}></input></div>
+            <input
+                type="submit" value="LOGIN" className="btn btn-primary"></input>
         </form>
+    </div>
     </div>)
 };
 export default Login;

@@ -2,7 +2,7 @@ import './App.css';
 import Header from "./components/Header";
 import HolidayMain from "./components/HolidayMain";
 import WeddingMain from "./components/WeddingMain";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import { Switch, Route } from "react-router-dom";
 import Global from "./Global";
 import Home from "./pages/Home";
@@ -13,7 +13,7 @@ import Registry from "./pages/Registry";
 function App() {
   return (
     <Global>
-      <Header/>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Home/>
@@ -39,7 +39,6 @@ function App() {
           render={(rp)=><HolidayMain {...rp}/>}>
         </Route>
       </Switch>
-      <Footer/>
     </Global>
   );
 }
