@@ -5,6 +5,8 @@ import HolidayEdit from "../pages/HolidayEdit";
 import { Context } from "../Global";
 
 
+
+
 const Main = (props) => {
         //Global State
     const [state, setState] = useContext(Context);
@@ -28,13 +30,56 @@ const Main = (props) => {
     };
 
     const [ApiResponse, setApiResponse] = useState(null);
-    //const URL = "http://localhost:4000/hol-registry/";
+    // const URL = "http://localhost:4000/api";
     const getApiResponse = async () => {
-        const response = await fetch(url + "/api/", {
+        const response = await fetch(url + "/api", {
             method: "get",
         });
         const data = await response.json();
         setApiResponse(data);
+
+
+    //function that can get a random number from 1-25, 
+        //we'll use this to target a random result from our search results object!
+        function randomNumber(){
+            const randNum = Math.floor(Math.random() * 25)
+            return randNum
+            }
+            //categories response is an array, let's loop through the categories
+            let products = []
+        
+            for (let i=0; i<10; i++) {
+            //get random number which we will use as index
+            const randomIndex = randomNumber()
+            console.log(randomIndex)
+
+            //get product name from API response 
+            const productName = data.results[randomIndex].title
+            console.log(productName)
+    
+    
+            //get product URL from API response
+            const productURL = data.results[randomIndex].url
+            console.log(productURL)
+    
+            //get product image from API response
+            const productImage = data.results[randomIndex].MainImage.url_fullxfull
+            console.log(productImage)
+            products[i] = {
+                name: productName,
+                image: productImage,
+                url: productURL 
+                };
+            }
+
+            console.log(products)
+            setApiResponse(products)
+            console.log(setApiResponse(products))
+    
+
+
+    
+    
 
     };
 
@@ -50,7 +95,7 @@ const Main = (props) => {
             body: JSON.stringify(item)
         }).then(response => response.json()).then(data => {
             getHolidayItem();
-            getApiResponse();
+            
         });
     };
     //Update with PUT Registry Item
@@ -84,6 +129,7 @@ const Main = (props) => {
         }
         getHolidayItem()
         getApiResponse()
+        
     }, []);
     return (
         <main>
@@ -91,7 +137,7 @@ const Main = (props) => {
                 <Route exact path="/hol-registry">
                     <HolidayShow
                         HolidayItem={HolidayItem}
-                        getApiResponse={ApiResponse}
+                        ApiResponse={ApiResponse}
                         createHolidayItem={createHolidayItem} 
                         deleteHolidayItem={deleteHolidayItem}
                         />
