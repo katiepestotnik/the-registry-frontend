@@ -2,7 +2,25 @@
 import { useState } from 'react';
 import {Link} from "react-router-dom"
 
+
+import React, { Component } from 'react'
+import ApiModel from '../models/apimodel'
+
+
+
+
 function HolidayShow(props) {
+  
+  const fetchData = () => {
+    ApiModel.all().then(data => {
+      this.setState({ api: data })
+    })
+  }
+
+
+
+
+
     const [newForm, setNewForm] = useState({
         itemName: "",
         itemDescription: "",
@@ -44,6 +62,7 @@ function HolidayShow(props) {
   };
   return (
     <section>
+      <div>{this}</div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -79,3 +98,4 @@ function HolidayShow(props) {
 } 
     
 export default HolidayShow
+

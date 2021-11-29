@@ -9,6 +9,8 @@ const Main = (props) => {
         //Global State
     const [state, setState] = useContext(Context);
     const { url, token } = state;
+
+
     //STATE to hold API data
     const [HolidayItem, setHolidayItem] = useState(null);
     //const URL = "http://localhost:4000/hol-registry/";
@@ -24,6 +26,18 @@ const Main = (props) => {
         const data = await response.json();
         setHolidayItem(data);
     };
+
+    const [ApiResponse, setApiResponse] = useState(null);
+    //const URL = "http://localhost:4000/hol-registry/";
+    const getApiResponse = async () => {
+        const response = await fetch(url + "/api/", {
+            method: "get",
+        });
+        const data = await response.json();
+        setApiResponse(data);
+
+    };
+
     //Create with POST RegistryItem
     const createHolidayItem = async (item) => {
         fetch(url + "/hol-registry/", {
@@ -36,6 +50,7 @@ const Main = (props) => {
             body: JSON.stringify(item)
         }).then(response => response.json()).then(data => {
             getHolidayItem();
+            getApiResponse();
         });
     };
     //Update with PUT Registry Item
@@ -68,6 +83,7 @@ const Main = (props) => {
             props.history.push('/')
         }
         getHolidayItem()
+        getApiResponse()
     }, []);
     return (
         <main>
@@ -75,6 +91,7 @@ const Main = (props) => {
                 <Route exact path="/hol-registry">
                     <HolidayShow
                         HolidayItem={HolidayItem}
+                        getApiResponse={ApiResponse}
                         createHolidayItem={createHolidayItem} 
                         deleteHolidayItem={deleteHolidayItem}
                         />
