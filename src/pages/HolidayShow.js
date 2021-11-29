@@ -1,24 +1,9 @@
 // Show.js
 import { useState } from 'react';
 import {Link} from "react-router-dom"
-
-
 import React, { Component } from 'react'
-// import products from '../models/apimodel';
-
-
-
-// const {foo, bar}  = await products.then(result => result.data);
-// console.log(foo, bar)
 
 function HolidayShow(props) {
-  
-
-
-
-
-
-
     const [newForm, setNewForm] = useState({
         itemName: "",
         itemDescription: "",
@@ -43,11 +28,12 @@ function HolidayShow(props) {
   
 
   const loaded = () => {
-    return [
+    return ["Some recommendations from etsy",
       props.ApiResponse.map((products) => (
       <div>
-        <h1>Some recommendations from Etsy!</h1>
+        
           <ul>
+            <li>"Test"</li>
               <li>{products.name}</li>
               <li><img src={products.image}></img></li>
               <li><a href={products.url}>{products.name}</a></li>
