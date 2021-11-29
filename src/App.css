@@ -44,11 +44,30 @@ h1.header-font {
   padding-top: 40px;
   padding-left: 15px;
 }
+h1.template-font {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 30px;
+}
 div.header-bg {
   background-image: url('https://myethicalchoice.com/wp-content/uploads/2021/03/ethical-gift-idea-top.jpeg');
   height: 250px;
   background-position: center -80px; 
 }
+div.img-wedding {
+  background-image: url('https://www.moneycrashers.com/wp-content/uploads/2015/04/unique-wedding-gift-ideas.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+div.img-holiday {
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/christmas-decoration-and-gift-boxes-on-table-royalty-free-image-1576623075.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
 h2.nav-decoration {
   padding: 15px;
   color: black;
@@ -56,6 +75,27 @@ h2.nav-decoration {
 }
 h2.nav-decoration:hover {
   text-decoration: underline;
+}
+
+div.template-registry{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  width: 400px;
+  height: 400px;
+  margin: 50px 50px;
+  text-align: center;
+  border: 3px solid black;
+}
+div.img-holiday:hover {
+  opacity: 1.0;
+}
+div.img-wedding:hover {
+  opacity: 1.0;
+}
+p.template-text {
+  margin-top: 45%;
+  font-size: 30px;
+  opacity: 1.0;
 }
 
 div.overlap-content {
@@ -92,3 +132,9 @@ input.btn-primary {
   border-color: gray;
   margin-bottom: 10px;
 };
+
+h2.template-registry{
+  padding: 15px;
+  color: black;
+  font-family: 'Playfair Display', serif
+}
