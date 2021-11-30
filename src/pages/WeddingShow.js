@@ -39,6 +39,22 @@ function WeddingShow(props) {
           </div>
       ))
   }
+
+  const etsyLoaded = () => {
+    console.log(props.ApiResponse)
+      return props.ApiResponse.map((products) => (
+        <div>
+            <ul>
+              <li>"Test"</li>
+                <li>{products.name}</li>
+                <li><img src={products.image} alt="Product"></img></li>
+                <li><a href={products.url}>{products.name}</a></li>
+              </ul>
+        </div>
+    ))
+  }
+
+  
   const loading = () => {
     return <h1>Loading...</h1>;
   };
@@ -72,6 +88,7 @@ function WeddingShow(props) {
         <input type="submit" value="Add to your registry" />
       </form>
       {props.WeddingItem ? loaded() : loading()}
+      {props.ApiResponse? etsyLoaded() : loading()}
     </section>
   );
 } 
