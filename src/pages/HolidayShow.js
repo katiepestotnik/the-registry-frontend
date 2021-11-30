@@ -25,23 +25,9 @@ function HolidayShow(props) {
     });
   };
 
-  
-
   const loaded = () => {
-    return ["Some recommendations from etsy",
-      props.ApiResponse.map((products) => (
-      <div>
-        
-          <ul>
-            <li>"Test"</li>
-              <li>{products.name}</li>
-              <li><img src={products.image}></img></li>
-              <li><a href={products.url}>{products.name}</a></li>
-            </ul>
-    
-      </div>
-  ))
-  , props.HolidayItem.map((item) => (
+    console.log(props.HolidayItem)
+    return props.HolidayItem.map((item) => (
       <div key={item._id}>
           <ul>
               <li>{item.itemName}</li>
@@ -53,10 +39,23 @@ function HolidayShow(props) {
     DELETE
   </button>
       </div>
-  ))]
+  ))
 }
- 
-  
+
+const etsyLoaded = () => {
+  console.log(props.ApiResponse)
+    return props.ApiResponse.map((products) => (
+      <div>
+          <ul>
+            <li>"Test"</li>
+              <li>{products.name}</li>
+              <li><img src={products.image} alt="Product"></img></li>
+              <li><a href={products.url}>{products.name}</a></li>
+            </ul>
+      </div>
+  ))
+}
+
   const loading = () => {
     return <h1>Loading...</h1>;
   };
@@ -91,6 +90,7 @@ function HolidayShow(props) {
         <input type="submit" value="Add to your registry" />
       </form>
       {props.HolidayItem ? loaded() : loading()}
+      {props.ApiResponse? etsyLoaded() : loading()}
     </section>
   );
 
