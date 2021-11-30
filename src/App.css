@@ -36,3 +36,164 @@
     transform: rotate(360deg);
   }
 }
+/* font: font-family: 'Great Vibes', cursive; font-family: 'Playfair Display', serif; */
+h1.header-font {
+  font-family: 'Great Vibes', cursive;
+  font-size: 67px;
+  margin: 0;
+  padding-top: 40px;
+  padding-left: 15px;
+}
+h1.template-font {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 30px;
+}
+div.header-bg {
+  background-image: url('https://myethicalchoice.com/wp-content/uploads/2021/03/ethical-gift-idea-top.jpeg');
+  height: 250px;
+  background-position: center -80px; 
+  padding-top: 30px;
+}
+div.img-wedding {
+  background-image: url('https://www.moneycrashers.com/wp-content/uploads/2015/04/unique-wedding-gift-ideas.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+div.img-holiday {
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/christmas-decoration-and-gift-boxes-on-table-royalty-free-image-1576623075.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+h2.nav-decoration {
+  padding: 15px;
+  color: black;
+  font-family: 'Playfair Display', serif;
+}
+h2.nav-decoration:hover {
+  text-decoration: underline;
+}
+
+div.template-registry{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  width: 400px;
+  height: 400px;
+  margin: 50px 50px;
+  text-align: center;
+  border: 3px solid black;
+}
+div.img-holiday:hover {
+  opacity: 1.0;
+}
+div.img-wedding:hover {
+  opacity: 1.0;
+}
+p.template-text {
+  margin-top: 45%;
+  font-size: 30px;
+  opacity: 1.0;
+}
+
+div.overlap-content {
+  margin: 1% 25% 0 25%;
+  border: 5px solid black;
+  padding-left: 2%;
+  padding-right:2%;
+}
+
+h3 {
+  width:55%;
+  margin-top:-20px;
+  margin-left:25px;
+  background:white;
+  font-family: 'Playfair Display', serif;
+}
+h3.form-label {
+  width: 35%;
+}
+p.home-paragraph {
+  text-align: justify;
+  font-family: 'Playfair Display', serif;
+}
+div.spacing-form {
+  margin-top: 2%;
+}
+div.mb-3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+input.btn {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+input.btn-primary {
+  color: #fff;
+  background-color: gray; 
+  border-color: gray;
+  margin-bottom: 10px;
+};
+
+h2.template-registry{
+  padding: 15px;
+  color: black;
+  font-family: 'Playfair Display', serif
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: goldenrod;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: goldenrod;
+}
+h5 {
+  font-family: 'Playfair Display', serif;
+  background: rgba(218, 165, 32, 0.6);
+}
+a {
+  color: black;
+}
+
+/* image carousel */
+div.col-border {
+  border: black solid 3px;
+  width: 400px;
+  height: 100%;
+  margin: 30px 80px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+img.d-block, .w-100 {
+  width: 390px;
+  height: 390px;
+  margin: auto;
+  object-fit: cover;
+}
+ul.list-font {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.logout-button{
+  background-color: grey;
+  display: block;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  
+}
+.logout-button:hover{
+  background-color: #0d6efd;
+}
