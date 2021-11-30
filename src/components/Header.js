@@ -14,7 +14,7 @@ const Header = (props) => {
     return (
         <div className="header-bg">
             <nav className="container">
-                <h1>The Registry</h1>
+                <h1 className="header-font">The Registry</h1>
                 <Link className="logout" to="/">{state.token?logout:null}</Link>
             </nav>
         </div>
