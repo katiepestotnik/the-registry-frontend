@@ -30,13 +30,14 @@ const Main = (props) => {
     };
 
     const [ApiResponse, setApiResponse] = useState(null);
-    // const URL = "http://localhost:4000/api";
+
     const getApiResponse = async () => {
         const response = await fetch(url + "/api", {
             method: "get",
         });
         const data = await response.json();
-        setApiResponse(data);
+        console.log(data)
+        // setApiResponse(data);
 
 
     //function that can get a random number from 1-25, 
@@ -67,6 +68,7 @@ const Main = (props) => {
                 url: productURL 
                 };
             }
+            console.log(products)
             setApiResponse(products) 
     };
 
