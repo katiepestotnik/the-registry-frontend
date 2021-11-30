@@ -173,4 +173,3 @@ const etsyCarousel = () => {
 } 
     
 export default HolidayShow
-
