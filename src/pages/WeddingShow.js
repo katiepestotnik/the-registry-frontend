@@ -40,10 +40,10 @@ function WeddingShow(props) {
               <li className="list-group-item">{item.itemDescription}</li>
               <a href={item.itemUrl}><li className="list-group-item">Go to {item.itemName} URL</li></a>
             </ul>
-    <Link to={`/wed-registry/${item._id}`}><button className="logout-button">EDIT</button></Link>
-  <button className="logout-button" id="delete" onClick={() => props.deleteWeddingItem(item._id)}>
+        <Link to={`/wed-registry/${item._id}`}><button className="logout-button">&nbsp;&nbsp;  EDIT  &nbsp; </button></Link>
+        <div className="center"><Link to={`/wed-registry`}><button className="logout-button"id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
     DELETE
-  </button>
+  </button></Link></div>
       </div>
   ))
 }

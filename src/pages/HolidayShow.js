@@ -35,19 +35,19 @@ function HolidayShow(props) {
   const loaded = () => {
     return props.HolidayItem.map((item) => (
       <div key={item._id} className="card">
-          <ul className="list-group list-group-flush list-font">
-              <li className="list-group-item">{item.itemName}</li>
-              <li className="list-group-item">{item.itemDescription}</li>
-              <a href={item.itemUrl}><li className="list-group-item">Go to {item.itemName} URL</li></a>
-            </ul>
-    <Link to={`/hol-registry/${item._id}`}><button className="logout-button">EDIT</button></Link>
-  <button className="logout-button"id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
-    DELETE
-  </button>
+        <ul className="list-group list-group-flush list-font">
+          <li className="list-group-item">Item Name: {item.itemName}</li>
+          <li className="list-group-item">Item Description: {item.itemDescription}</li>
+          <a href={item.itemUrl}><li className="list-group-item">Item URL: {item.itemName} URL</li></a>
+        </ul>
+        <div className="center">
+          <Link to={`/hol-registry/${item._id}`}><button className="logout-button edit-size" id="delete">&nbsp;&nbsp;  EDIT  &nbsp; </button></Link></div>
+        <div className="center"><Link to={`/hol-registry`}><button className="logout-button" id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
+          DELETE
+        </button></Link></div>
       </div>
-  ))
+    ));
 }
-
 
 const etsyCarousel = () => {
   const products = props.ApiResponse
