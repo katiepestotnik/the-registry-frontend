@@ -16,7 +16,43 @@ No installation is required, please see usage for the link to The Registry app.
 
 React Router Table 
 
-
+    -> App
+    -> Global
+      -> Header
+        -> Switch
+          ->Route exact path="/"
+            ->Home
+          ->Route path="/signup"
+            ->Signup
+            state={state}
+          ->Route path="/login"
+            ->Login
+            state={state}
+          ->Route path="/registry"
+            ->Registry
+            state={state}
+          ->Route path="wed-registry"
+            ->WeddingMain
+            state={state}
+            WeddingItem={WeddingItem}
+            ApiResponse={ApiResponse}
+            createWeddingItem={createWeddingItem} 
+            deleteWeddingItem={deleteWeddingItem}
+          -> Route path: "/wed-registry/:id
+            ->WeddingEdit
+              WeddingItem={WeddingItem}
+              updateWeddingItem={updateWeddingItem} 
+            ->Route path="hol-registry"
+            ->HolidayMain
+            state={state}
+             HolidayItem={HolidayItem}
+             ApiResponse={ApiResponse}
+             createHolidayItem={createHolidayItem} 
+             deleteHolidayItem={deleteHolidayItem}
+           -> Route path="hol-registry/:id
+            ->HolidayEdit
+              HolidayItem={HolidayItem}
+              updateHolidayItem={updateHolidayItem}
 
 ## Technologies used
 
