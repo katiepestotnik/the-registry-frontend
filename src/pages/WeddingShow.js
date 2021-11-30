@@ -154,7 +154,7 @@ const etsyCarousel = () => {
                 type="text"
                 value={newForm.itemUrl}
                 name="itemUrl"
-                placeholder="https//"
+                placeholder="URL"
                 onChange={handleChange}
                 className="form-control"
               /></div>
