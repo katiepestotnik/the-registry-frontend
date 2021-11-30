@@ -39,7 +39,7 @@ function HolidayEdit(props) {
             onChange={handleChange}
             className="form-input"
           /> <br />
-          <input type="submit" value="Update Item" />
+          <input className="logout-button"type="submit" value="Update Item" />
         </form>
       </div>
     )

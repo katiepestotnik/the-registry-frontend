@@ -54,6 +54,7 @@ div.header-bg {
   background-image: url('https://myethicalchoice.com/wp-content/uploads/2021/03/ethical-gift-idea-top.jpeg');
   height: 250px;
   background-position: center -80px; 
+  padding-top: 30px;
 }
 div.img-wedding {
   background-image: url('https://www.moneycrashers.com/wp-content/uploads/2015/04/unique-wedding-gift-ideas.jpg');
@@ -180,4 +181,12 @@ img.d-block, .w-100 {
 ul.list-font {
   font-family: 'Playfair Display', serif;
   text-align: center;
+}
+.logout-button{
+  background-color: grey;
+  display: block;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  
 }

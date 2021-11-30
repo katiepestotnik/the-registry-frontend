@@ -40,8 +40,8 @@ function HolidayShow(props) {
               <li className="list-group-item">{item.itemDescription}</li>
               <a href={item.itemUrl}><li className="list-group-item">Go to {item.itemName} URL</li></a>
             </ul>
-    <Link to={`/hol-registry/${item._id}`}><button>EDIT</button></Link>
-  <button id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
+    <Link to={`/hol-registry/${item._id}`}><button className="logout-button">EDIT</button></Link>
+  <button className="logout-button"id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
     DELETE
   </button>
       </div>
@@ -158,7 +158,7 @@ const etsyCarousel = () => {
                 onChange={handleChange}
                 className="form-control"
               /></div>
-              <input type="submit" value="Add to your registry" />
+              <input className="logout-button" type="submit" value="Add to your registry" />
             </form>
         </div>
       </div>

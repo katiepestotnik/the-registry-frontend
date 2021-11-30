@@ -40,8 +40,8 @@ function WeddingShow(props) {
               <li className="list-group-item">{item.itemDescription}</li>
               <a href={item.itemUrl}><li className="list-group-item">Go to {item.itemName} URL</li></a>
             </ul>
-    <Link to={`/wed-registry/${item._id}`}><button>EDIT</button></Link>
-  <button id="delete" onClick={() => props.deleteWeddingItem(item._id)}>
+    <Link to={`/wed-registry/${item._id}`}><button className="logout-button">EDIT</button></Link>
+  <button className="logout-button" id="delete" onClick={() => props.deleteWeddingItem(item._id)}>
     DELETE
   </button>
       </div>
@@ -154,11 +154,11 @@ const etsyCarousel = () => {
                 type="text"
                 value={newForm.itemUrl}
                 name="itemUrl"
-                placeholder="URL"
+                placeholder="https//"
                 onChange={handleChange}
                 className="form-control"
               /></div>
-              <input type="submit" value="Add to your registry" />
+              <input className="logout-button" type="submit" value="Add to your registry" />
             </form>
         </div>
       </div>
