@@ -38,7 +38,7 @@ function HolidayShow(props) {
         <ul className="list-group list-group-flush list-font">
           <li className="list-group-item">Item Name: {item.itemName}</li>
           <li className="list-group-item">Item Description: {item.itemDescription}</li>
-          <a href={item.itemUrl}><li className="list-group-item">Item URL: {item.itemName} URL</li></a>
+          <a href={item.itemUrl}target="_blank" rel="noreferrer"><li className="list-group-item">Item URL: {item.itemName} URL</li></a>
         </ul>
         <div className="center">
           <Link to={`/hol-registry/${item._id}`}><button className="logout-button edit-size" id="delete">&nbsp;&nbsp;  EDIT  &nbsp; </button></Link></div>
