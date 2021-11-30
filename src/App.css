@@ -104,6 +104,7 @@ div.overlap-content {
   padding-left: 2%;
   padding-right:2%;
 }
+
 h3 {
   width:55%;
   margin-top:-20px;
@@ -111,12 +112,15 @@ h3 {
   background:white;
   font-family: 'Playfair Display', serif;
 }
+h3.form-label {
+  width: 35%;
+}
 p.home-paragraph {
   text-align: justify;
   font-family: 'Playfair Display', serif;
 }
 div.spacing-form {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 div.mb-3 {
   font-family: 'Playfair Display', serif;
@@ -137,4 +141,37 @@ h2.template-registry{
   padding: 15px;
   color: black;
   font-family: 'Playfair Display', serif
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: goldenrod;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: goldenrod;
+}
+h5 {
+  font-family: 'Playfair Display', serif;
+  background: rgba(218, 165, 32, 0.6);
+
+}
+
+/* image carousel */
+div.col-border {
+  border: black solid 3px;
+  width: 400px;
+  height: 100%;
+  margin: 30px 45px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+img.d-block, .w-100 {
+  width: 390px;
+  height: 390px;
+  margin: auto;
+  object-fit: cover;
 }

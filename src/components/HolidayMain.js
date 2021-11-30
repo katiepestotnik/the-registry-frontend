@@ -36,10 +36,6 @@ const Main = (props) => {
             method: "get",
         });
         const data = await response.json();
-        console.log(data)
-        // setApiResponse(data);
-
-
     //function that can get a random number from 1-25, 
         //we'll use this to target a random result from our search results object!
         function randomNumber(){
@@ -53,6 +49,8 @@ const Main = (props) => {
             //get random number which we will use as index
             const randomIndex = randomNumber()
 
+            const productID = data.results[randomIndex].listing_id
+
             //get product name from API response 
             const productName = data.results[randomIndex].title
 
@@ -63,12 +61,12 @@ const Main = (props) => {
             //get product image from API response
             const productImage = data.results[randomIndex].MainImage.url_fullxfull
             products[i] = {
+                id: productID,
                 name: productName,
                 image: productImage,
                 url: productURL 
                 };
             }
-            console.log(products)
             setApiResponse(products) 
     };
 
