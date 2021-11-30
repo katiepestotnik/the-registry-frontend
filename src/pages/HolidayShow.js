@@ -163,7 +163,7 @@ const etsyCarousel = () => {
         </div>
       </div>
       <div className="row">
-      <div className="col col-border col-left">{props.HolidayItem ? loaded() : loading()}</div>
+      <div className="col col-border col-left"><h3>Holiday Items</h3>{props.HolidayItem ? loaded() : loading()}</div>
       <div className="col col-border col-right">{props.ApiResponse? etsyCarousel() : loading()}</div>
       </div>
     </section>
