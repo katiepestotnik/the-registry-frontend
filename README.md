@@ -33,6 +33,7 @@ React Router Table
             state={state}
           ->Route path="wed-registry"
             ->WeddingMain
+            ->WeddingShow
             state={state}
             WeddingItem={WeddingItem}
             ApiResponse={ApiResponse}
@@ -44,6 +45,7 @@ React Router Table
               updateWeddingItem={updateWeddingItem} 
             ->Route path="hol-registry"
             ->HolidayMain
+            ->HolidayShow
             state={state}
              HolidayItem={HolidayItem}
              ApiResponse={ApiResponse}
