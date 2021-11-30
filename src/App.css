@@ -157,7 +157,9 @@ h2.template-registry{
 h5 {
   font-family: 'Playfair Display', serif;
   background: rgba(218, 165, 32, 0.6);
-
+}
+a {
+  color: black;
 }
 
 /* image carousel */
@@ -165,7 +167,7 @@ div.col-border {
   border: black solid 3px;
   width: 400px;
   height: 100%;
-  margin: 30px 45px;
+  margin: 30px 80px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -174,4 +176,8 @@ img.d-block, .w-100 {
   height: 390px;
   margin: auto;
   object-fit: cover;
+}
+ul.list-font {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
 }
