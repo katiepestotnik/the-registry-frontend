@@ -1,5 +1,3 @@
-#Bookmark APP
-
 # The Registry
 
 The Registry is a Javascript application for saving your favorite links on the Internet!
