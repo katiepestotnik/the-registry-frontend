@@ -14,8 +14,13 @@ function HolidayEdit(props) {
       props.history.push("/hol-registry")
     }
     return (
-      <div>
+      <section>
+        <div className="spacing-form">
+          <div className="overlap-content">
+          <h3 className="form-label">Update Item</h3>
         <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+              <label for="ItemDescription" className="form-label">Item Name</label><br/>
           <input
             type="text"
             value={editForm.name}
@@ -24,13 +29,18 @@ function HolidayEdit(props) {
             onChange={handleChange}
             className="form-input"
           />
+          </div>
+          <div className="mb-3">
+            <label for="ItemDescription" className="form-label">Item Description</label><br/>
           <input
             type="text"
             value={editForm.itemDescription}
             name="itemDescription"
             placeholder={holidayItem.itemDescription}
             onChange={handleChange}
-          />
+          /></div>
+          <div className="mb-3">
+          <label for="ItemURL" className="form-label">Item URL</label><br/>
           <input
             type="text"
             value={editForm.itemUrl}
@@ -38,11 +48,13 @@ function HolidayEdit(props) {
             placeholder={holidayItem.itemUrl}
             onChange={handleChange}
             className="form-input"
-          /> <br />
+          /> </div>
           <input className="logout-button"type="submit" value="Update Item" />
         </form>
-      </div>
-    )
+        </div>
+        </div>
+        </section>
+    );
   }
   
   export default HolidayEdit 

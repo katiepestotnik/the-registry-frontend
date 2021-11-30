@@ -190,3 +190,6 @@ ul.list-font {
   font-size: 20px;
   
 }
+.logout-button:hover{
+  background-color: #0d6efd;
+}
