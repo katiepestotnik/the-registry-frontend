@@ -26,10 +26,10 @@ const Main = (props) => {
     };
 
 
-    const [ApiResponse, setApiResponse] = useState(null);
+    const [WeddingApiResponse, setWeddingApiResponse] = useState(null);
 
-    const getApiResponse = async () => {
-        const response = await fetch(url + "/api", {
+    const getWeddingApiResponse = async () => {
+        const response = await fetch(url + "/weddingapi", {
             method: "get",
         });
         const data = await response.json();
@@ -66,7 +66,7 @@ const Main = (props) => {
                 };
             }
             console.log(products)
-            setApiResponse(products) 
+            setWeddingApiResponse(products) 
     };
 
 
@@ -116,7 +116,7 @@ const Main = (props) => {
             props.history.push('/')
         }
         getWeddingItem();
-        getApiResponse();
+        getWeddingApiResponse();
     }, [])
     return (
         <main>
@@ -124,7 +124,7 @@ const Main = (props) => {
                 <Route exact path="/wed-registry">
                     <WeddingShow
                         WeddingItem={WeddingItem}
-                        ApiResponse={ApiResponse}
+                        WeddingApiResponse={WeddingApiResponse}
                         createWeddingItem={createWeddingItem} 
                         deleteWeddingItem={deleteWeddingItem}
                         />

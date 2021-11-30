@@ -41,8 +41,8 @@ function WeddingShow(props) {
   }
 
   const etsyLoaded = () => {
-    console.log(props.ApiResponse)
-      return props.ApiResponse.map((products) => (
+    console.log(props.WeddingApiResponse)
+      return props.WeddingApiResponse.map((products) => (
         <div>
             <ul>
               <li>"Test"</li>
@@ -88,7 +88,7 @@ function WeddingShow(props) {
         <input type="submit" value="Add to your registry" />
       </form>
       {props.WeddingItem ? loaded() : loading()}
-      {props.ApiResponse? etsyLoaded() : loading()}
+      {props.WeddingApiResponse? etsyLoaded() : loading()}
     </section>
   );
 } 
