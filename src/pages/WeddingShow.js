@@ -57,61 +57,61 @@ const etsyCarousel = () => {
             <MDBCarouselItem key={products[0].id} className='active'>
             <MDBCarouselElement src={products[0].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[0].url}><h5>{products[0].name}</h5></a>
+            <a href={products[0].url}target="_blank" rel="noreferrer"><h5>{products[0].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[1].id}>
             <MDBCarouselElement src={products[1].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[1].url}><h5>{products[1].name}</h5></a>
+            <a href={products[1].url}target="_blank" rel="noreferrer"><h5>{products[1].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[2].id}>
             <MDBCarouselElement src={products[2].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[2].url}><h5>{products[2].name}</h5></a>
+            <a href={products[2].url}target="_blank" rel="noreferrer"><h5>{products[2].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[3].id}>
             <MDBCarouselElement src={products[3].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[3].url}><h5>{products[3].name}</h5></a>
+            <a href={products[3].url}target="_blank" rel="noreferrer"><h5>{products[3].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[4].id}>
             <MDBCarouselElement src={products[4].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[4].url}><h5>{products[4].name}</h5></a>
+            <a href={products[4].url}target="_blank" rel="noreferrer"><h5>{products[4].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[5].id}>
             <MDBCarouselElement src={products[5].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[5].url}><h5>{products[5].name}</h5></a>
+            <a href={products[5].url}target="_blank" rel="noreferrer"><h5>{products[5].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[6].id}>
             <MDBCarouselElement src={products[6].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[6].url}><h5>{products[6].name}</h5></a>
+            <a href={products[6].url}target="_blank" rel="noreferrer"><h5>{products[6].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[7].id}>
             <MDBCarouselElement src={products[7].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[7].url}><h5>{products[7].name}</h5></a>
+            <a href={products[7].url}target="_blank" rel="noreferrer"><h5>{products[7].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[8].id}>
             <MDBCarouselElement src={products[8].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[8].url}><h5>{products[8].name}</h5></a>
+            <a href={products[8].url}target="_blank" rel="noreferrer"><h5>{products[8].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem key={products[9].id}>
             <MDBCarouselElement src={products[9].image} alt="Product" />
             <MDBCarouselCaption>
-            <a href={products[9].url}><h5>{products[9].name}</h5></a>
+            <a href={products[9].url}target="_blank" rel="noreferrer"><h5>{products[9].name}</h5></a>
             </MDBCarouselCaption>
             </MDBCarouselItem>
         </MDBCarouselInner>
