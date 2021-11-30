@@ -25,7 +25,7 @@ const Home = (props) => {
         </ul>
         <div className="overlap-content">
             <h3>Welcome to your Registry</h3>
-            <p className="home-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p className="home-paragraph">Choose between a wedding or holiday wishlist and add items to your list. There is a list of suggested items from Etsy that you might look through and add to your list!</p>
 
         </div>
         </div>
