@@ -182,6 +182,10 @@ ul.list-font {
   font-family: 'Playfair Display', serif;
   text-align: center;
 }
+.container{
+  display: flex;
+  justify-content: space-between;
+}
 .logout-button{
   background-color: grey;
   display: block;
