@@ -41,7 +41,7 @@ function WeddingShow(props) {
               <a href={item.itemUrl}target="_blank" rel="noreferrer"><li className="list-group-item">Go to {item.itemName} URL</li></a>
             </ul>
         <Link to={`/wed-registry/${item._id}`}><button className="logout-button">&nbsp;&nbsp;  EDIT  &nbsp; </button></Link>
-        <div className="center"><Link to={`/wed-registry`}><button className="logout-button"id="delete" onClick={() => props.deleteHolidayItem(item._id)}>
+        <div className="center"><Link to={`/wed-registry`}><button className="logout-button"id="delete" onClick={() => props.deleteWeddingItem(item._id)}>
     DELETE
   </button></Link></div>
       </div>
